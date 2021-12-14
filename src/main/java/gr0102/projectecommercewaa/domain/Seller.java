@@ -13,13 +13,10 @@ import javax.persistence.Id;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Getter
 @Setter
 public class Seller extends User{
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long id;
+
     private String shopName;
 
 

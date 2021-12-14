@@ -5,31 +5,36 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
-
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-abstract class User extends Role{
-    enum UserStatus
-    {
-        REGISTERED, APPROVED, DISABLED;
-    }
+@Entity
+public class User{
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    long id;
+    String name;
+    String username;
+    String password;
 
-    private String name;
-    private String fName;
-    private String lName;
+    private String lastname;
     private String email;
-    private String password;
     private Date birthDate;
     private String phone;
-    private UserStatus status;
     private Date registeredDate;
+    boolean isEnabled;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "USER_ROLES", joinColumns = {
+            @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
+            @JoinColumn(name = "ROLE_ID") })
+    private Set<Role> roles;
+
+
 }

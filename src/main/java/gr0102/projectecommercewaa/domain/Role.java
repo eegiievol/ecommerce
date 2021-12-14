@@ -5,20 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-abstract class Role {
-    enum UserRole
-    {
-        ADMIN, SELLER, BUYER;
-    }
-    private UserRole role;
+@Entity
+public class Role {
+
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
+    private long id;
+
+    @Column(name = "role")
+    private String role;
+
 }
