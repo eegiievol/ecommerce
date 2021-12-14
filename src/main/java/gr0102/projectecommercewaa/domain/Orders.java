@@ -24,9 +24,9 @@ public class Orders {
     private List<Product> products;
 
     @ManyToOne
-    @JoinColumn(name = "buyer_id")
+    @JoinColumn(name = "user_id")
     @JsonBackReference
-    private Buyer buyer;
+    private User user;
 
     private LocalDateTime orderDate;
     private double totalPrice;

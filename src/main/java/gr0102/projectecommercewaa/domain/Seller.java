@@ -18,8 +18,8 @@ public class Seller extends User{
 
     private String shopName;
 
-    @OneToMany(mappedBy = "seller")
-    @JsonManagedReference
-    private List<Product> products;
+//    @OneToMany(mappedBy = "seller")
+//    @JsonManagedReference
+//    private List<Product> products;
 
 }

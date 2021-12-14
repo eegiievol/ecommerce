@@ -32,7 +32,7 @@ public class Product {
     private ProductStatus productStatus;
 
     @ManyToOne
-    @JoinColumn(name = "seller_id")
+    @JoinColumn(name = "user_id")
     @JsonBackReference
-    private Seller seller;
+    private User user;
 }

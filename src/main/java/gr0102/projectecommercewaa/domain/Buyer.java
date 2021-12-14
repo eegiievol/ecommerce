@@ -15,8 +15,8 @@ import java.util.List;
 @Setter
 public class Buyer extends User{
 
-    @OneToMany(mappedBy = "buyer")
-    @JsonManagedReference
-    private List<Orders> orders;
+//    @OneToMany(mappedBy = "buyer")
+//    @JsonManagedReference
+//    private List<Orders> orders;
 
 }
