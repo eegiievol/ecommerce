@@ -15,6 +15,8 @@ import javax.persistence.Id;
 @Setter
 public class Admin extends User{
 
+    //comment
+
 
     //main test
 }
