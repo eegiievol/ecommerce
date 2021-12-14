@@ -20,8 +20,7 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany
-    @JoinColumn(name = "prod_id")
+    @ManyToMany
     private List<Product> products;
 
     @ManyToOne

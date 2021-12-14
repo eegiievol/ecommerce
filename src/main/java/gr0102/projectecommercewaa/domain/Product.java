@@ -29,7 +29,7 @@ public class Product {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private productStatus productStatus;
+    private ProductStatus productStatus;
 
     @ManyToOne
     @JoinColumn(name = "seller_id")

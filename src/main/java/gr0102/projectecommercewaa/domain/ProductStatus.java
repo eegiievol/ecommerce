@@ -1,6 +1,6 @@
 package gr0102.projectecommercewaa.domain;
 
-public enum productStatus {
+public enum ProductStatus {
     active,
     deactivated,
     outOfStock;
