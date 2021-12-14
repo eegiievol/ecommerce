@@ -1,29 +1,23 @@
 package gr0102.projectecommercewaa.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class Seller {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Seller extends User{
 
-    @OneToMany(mappedBy = "seller")
-    @JsonManagedReference
-    private List<Product> products;
-
-    private String firstName;
-    private String lastName;
     private String shopName;
+
+
 }
