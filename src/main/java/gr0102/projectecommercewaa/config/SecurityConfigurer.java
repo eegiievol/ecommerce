@@ -1,6 +1,6 @@
 package gr0102.projectecommercewaa.config;
 
-import gr0102.projectecommercewaa.domain.JwtFilter;
+import gr0102.projectecommercewaa.filter.JwtFilter;
 import gr0102.projectecommercewaa.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

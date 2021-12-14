@@ -1,4 +1,4 @@
-package gr0102.projectecommercewaa.domain;
+package gr0102.projectecommercewaa.filter;
 
 
 import gr0102.projectecommercewaa.util.JwtUtil;
