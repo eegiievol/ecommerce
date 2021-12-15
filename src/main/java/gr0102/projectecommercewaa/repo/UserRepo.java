@@ -1,4 +1,4 @@
-package gr0102.projectecommercewaa.repository;
+package gr0102.projectecommercewaa.repo;
 
 import gr0102.projectecommercewaa.domain.User;
 import org.springframework.data.jpa.repository.Query;
@@ -13,8 +13,9 @@ import java.util.Optional;
 public interface UserRepo extends CrudRepository<User,Long> {
 
     public List<User> findAll();
-    public Optional<User> findByUsername(String username);
+    public User findUserByUsername(String username);
     public User findUserById(long id);
+    public Optional<User> findByUsername(String username);
 
 }
 

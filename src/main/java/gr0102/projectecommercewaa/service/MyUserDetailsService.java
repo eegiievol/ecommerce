@@ -1,7 +1,7 @@
 package gr0102.projectecommercewaa.service;
 
 import gr0102.projectecommercewaa.domain.User;
-import gr0102.projectecommercewaa.repository.UserRepo;
+import gr0102.projectecommercewaa.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

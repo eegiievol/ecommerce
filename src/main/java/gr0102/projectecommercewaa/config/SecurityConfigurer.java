@@ -50,7 +50,18 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
                 //.antMatchers( "/admin/**").hasRole("ADMIN")
                 .antMatchers("/", "/h2-console/**").permitAll()
                 .antMatchers("/authenticate").permitAll()
-                .antMatchers("/**/admin").hasAuthority("ADMIN")
+                .antMatchers("/").hasAuthority("ADMIN")
+
+                .antMatchers("/products").hasAuthority("CUSTOMER")
+
+                .antMatchers("/seller").hasAuthority("SELLER")
+
+                .antMatchers("/orders").hasAuthority("SELLER")
+
+                .antMatchers("/reviews").hasAuthority("CUSTOMER")
+                .antMatchers("/reviews").hasAuthority("ADMIN")
+
+                .antMatchers("/users").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
