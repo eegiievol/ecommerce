@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -22,6 +23,8 @@ public class Review {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private ReviewStatus status;
+
+    private LocalDateTime reviewDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "rate")
