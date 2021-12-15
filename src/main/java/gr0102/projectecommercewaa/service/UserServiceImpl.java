@@ -1,12 +1,14 @@
 package gr0102.projectecommercewaa.service;
 
 import gr0102.projectecommercewaa.domain.User;
-import gr0102.projectecommercewaa.repository.UserRepo;
+import gr0102.projectecommercewaa.repo.UserRepo;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -46,4 +48,19 @@ public class UserServiceImpl implements UserService {
         user = userRepo.findUserById(id);
         userRepo.delete(user);
     }
+
+    @Override
+    public void approve(long id) {
+        User u = userRepo.findUserById(id);
+        u.setEnabled(true);
+        userRepo.save(u);
+    }
+
+    @Override
+    public boolean ifUserApproved(String username) {
+        User u = userRepo.findUserByUsername(username);
+        return u.isEnabled();
+    }
+
+
 }
