@@ -1,6 +1,7 @@
 package gr0102.projectecommercewaa.service;
 
 import gr0102.projectecommercewaa.domain.Product;
+import gr0102.projectecommercewaa.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +14,8 @@ public class SellerServiceImpl implements SellerService {
     ProductService productService;
 
     @Override
-    public void addProduct(Product product) {
-//        productService.save();
+    public void addProduct(Product p, User user) {
+        productService.save(p, user);
     }
 
     @Override
