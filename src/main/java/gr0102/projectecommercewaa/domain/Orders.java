@@ -29,6 +29,9 @@ public class Orders {
     private User user;
 
     private LocalDateTime orderDate;
+    private LocalDateTime cancelledDate;
+    private LocalDateTime shippedDate;
+    private LocalDateTime deliveredDate;
     private double totalPrice;
 
     @Enumerated(EnumType.STRING)
