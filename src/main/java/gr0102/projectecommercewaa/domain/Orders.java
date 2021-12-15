@@ -30,4 +30,8 @@ public class Orders {
 
     private LocalDateTime orderDate;
     private double totalPrice;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "order_status")
+    private OrdersStatus ordersStatus;
 }

@@ -1,6 +1,7 @@
 package gr0102.projectecommercewaa.controller;
 
 import gr0102.projectecommercewaa.domain.Product;
+import gr0102.projectecommercewaa.domain.User;
 import gr0102.projectecommercewaa.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,5 +28,5 @@ public class ProductController {
     public Product getById(@PathVariable Integer id) { return productService.findById(id); }
 
     @PostMapping
-    public Product saveProduct(@RequestBody Product product) { return productService.save(product); }
+    public Product saveProduct(@RequestBody Product product, @RequestBody User user) { return productService.save(product, user); }
 }

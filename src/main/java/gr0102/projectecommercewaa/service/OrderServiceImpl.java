@@ -56,4 +56,9 @@ public class OrderServiceImpl implements OrderService {
         else
             return null;
     }
+
+    @Override
+    public boolean isThereOrderWithProductId(Integer product_id) {
+        return false;
+    }
 }

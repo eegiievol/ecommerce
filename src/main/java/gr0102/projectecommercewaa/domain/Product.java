@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -24,7 +25,7 @@ public class Product {
     private ProductCategory productCategory;
 
     private String name;
-    private Date addedDate;
+    private LocalDateTime addedDate;
     private double price;
 
     @Enumerated(EnumType.STRING)
