@@ -10,4 +10,5 @@ public interface OrderService {
     Orders save(Orders order);
     boolean deleteById(Integer id);
     Orders updateById(Integer id, Orders order);
+    boolean isThereOrderWithProductId(Integer product_id);
 }

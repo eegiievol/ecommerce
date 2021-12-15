@@ -2,11 +2,13 @@ package gr0102.projectecommercewaa.controller;
 
 import gr0102.projectecommercewaa.domain.Orders;
 import gr0102.projectecommercewaa.domain.Product;
+import gr0102.projectecommercewaa.repo.OrderRepo;
 import gr0102.projectecommercewaa.service.OrderService;
 import gr0102.projectecommercewaa.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -30,4 +32,5 @@ public class OrderController {
 
     @PostMapping
     public Orders saveProduct(@RequestBody Orders order) { return orderService.save(order); }
+
 }

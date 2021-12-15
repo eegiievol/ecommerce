@@ -13,20 +13,16 @@ INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (1,
 INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (2,'2021-12-13', 'Hat','10.5','Clothing','active',1);
 INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (3,'2021-12-13', 'Dell','950.60','Computer','active',2);
 INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (4,'2021-12-13', 'Apple Watch','120.0','Watch','active',2);
+INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (5,'2021-12-13', 'Dell monitor','150.0','Computer','active',4);
 
-INSERT INTO ORDERS (id, order_date, total_price, user_id)  VALUES (1, '2021-12-13', '13', 1);
-INSERT INTO ORDERS (id, order_date, total_price, user_id)  VALUES (2, '2021-12-13', '120', 1);
-INSERT INTO ORDERS (id, order_date, total_price, user_id)  VALUES (3, '2021-12-13', '122.5', 2);
-INSERT INTO ORDERS (id, order_date, total_price, user_id)  VALUES (4, '2021-12-13', '950.60', 2);
+INSERT INTO ORDERS (id, order_date, total_price, user_id, order_status)  VALUES (1, '2021-12-13', '13', 1, 'Just_ordered');
+INSERT INTO ORDERS (id, order_date, total_price, user_id, order_status)  VALUES (2, '2021-12-13', '120', 1, 'Cancelled');
+INSERT INTO ORDERS (id, order_date, total_price, user_id, order_status)  VALUES (3, '2021-12-13', '122.5', 2, 'Shipped');
+INSERT INTO ORDERS (id, order_date, total_price, user_id, order_status)  VALUES (4, '2021-12-13', '950.60', 2, 'Delivered');
 
 INSERT INTO REVIEW (id, comment, rate, status, product_id)  VALUES (1, 'it was good.', 'Good', 'new_added', 1);
 INSERT INTO REVIEW (id, comment, rate, status, product_id)  VALUES (2, 'it was Excellent.', 'Excellent', 'approved', 2);
 INSERT INTO REVIEW (id, comment, rate, status, product_id)  VALUES (3, 'it was not so good.', 'Neutral', 'approved', 3);
-
--- INSERT into POST (id, title, content, author, USER_ID) VALUES (1, 'MIU','Life is structured in layers','Dean', 111);
--- INSERT into POST (id, title, content, author, USER_ID) VALUES (2, 'React','React is a good SPA library','Dean', 111);
--- INSERT into POST (id, title, content, author, USER_ID) VALUES (3, 'Spring','Spring is awesome','Blen', 112);
--- INSERT into POST (id, title, content, author, USER_ID)  VALUES (4, 'SpringBoot','This is a module that works over spring modules','John',112);
 
 INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (1, 'USER');
 INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (2, 'ADMIN');
@@ -36,7 +32,6 @@ insert into USER_ROLES(USER_ID, ROLE_ID) values (2, 1);
 insert into USER_ROLES(USER_ID, ROLE_ID) values (3, 1);
 insert into USER_ROLES(USER_ID, ROLE_ID) values (4, 1);
 insert into USER_ROLES(USER_ID, ROLE_ID) values (5, 2);
-
 
 INSERT INTO ORDERS_PRODUCTS (orders_id, products_id) VALUES (1, 1);
 INSERT INTO ORDERS_PRODUCTS (orders_id, products_id) VALUES (1, 2);
