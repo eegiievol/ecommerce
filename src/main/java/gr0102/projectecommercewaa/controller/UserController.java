@@ -40,6 +40,9 @@ public class UserController {
         userService.deleteUser(id);
     }
 
-
+    @GetMapping("/approve/{id}")
+    public void approveUser(@PathVariable long id){
+        userService.approve(id);
+    }
 
 }

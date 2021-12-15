@@ -1,8 +1,6 @@
 package gr0102.projectecommercewaa.service;
 
 import gr0102.projectecommercewaa.domain.Product;
-import gr0102.projectecommercewaa.repo.ProductRepo;
-import gr0102.projectecommercewaa.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -15,7 +15,7 @@ public class SellerController {
     @Autowired
     SellerService sellerService;
 
-    @GetMapping("/getAll")
+    @GetMapping
     public List<Product> getAll() { return sellerService.getAll(); }
 
     @PutMapping("/{id}")
