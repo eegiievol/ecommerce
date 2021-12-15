@@ -43,13 +43,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product save(Product product, User user) {
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-        product.setAddedDate(currentDateTime);
+    public Product save(Product product) {
+        product.setAddedDate(LocalDateTime.now());
         product.setProductStatus(ProductStatus.active);
-        product.setUser(user);
+        //product.setUser(user);
 
         return productRepo.save(product);
     }
@@ -71,10 +68,10 @@ public class ProductServiceImpl implements ProductService {
     public Product updateById(Integer id, Product product) {
         if(productRepo.findById(id).isPresent()) {
             Product updatingProduct = productRepo.findById(id).get();
-            updatingProduct.setName(product.getName());
-            updatingProduct.setProductStatus(product.getProductStatus());
-            updatingProduct.setProductCategory(product.getProductCategory());
-            updatingProduct.setPrice(product.getPrice());
+            if(product.getName() != null) updatingProduct.setName(product.getName());
+            if(product.getProductStatus() != null) updatingProduct.setProductStatus(product.getProductStatus());
+            if(product.getProductCategory() != null) updatingProduct.setProductCategory(product.getProductCategory());
+            if(product.getPrice() > 0) updatingProduct.setPrice(product.getPrice());
             productRepo.save(updatingProduct);
 
             return product;

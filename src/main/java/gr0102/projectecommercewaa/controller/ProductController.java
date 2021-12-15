@@ -6,6 +6,7 @@ import gr0102.projectecommercewaa.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -28,5 +29,5 @@ public class ProductController {
     public Product getById(@PathVariable Integer id) { return productService.findById(id); }
 
     @PostMapping
-    public Product saveProduct(@RequestBody Product product, @RequestBody User user) { return productService.save(product, user); }
+    public Product saveProduct(@RequestBody Product product) { return productService.save(product); }
 }
