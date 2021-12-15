@@ -25,6 +25,7 @@ INSERT INTO REVIEW (id, comment, rate, status, product_id)  VALUES (2, 'it was E
 INSERT INTO REVIEW (id, comment, rate, status, product_id)  VALUES (3, 'it was not so good.', 'Neutral', 'approved', 3);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (1, 'USER');
 INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (2, 'ADMIN');
 =======
@@ -37,6 +38,11 @@ INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (1, 'CUSTOMER');
 INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (2, 'SELLER');
 INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (3, 'ADMIN');
 >>>>>>> 2603e1760ac65aa459101a29f46d0e904604e0a8
+=======
+INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (1, 'CUSTOMER');
+INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (2, 'SELLER');
+INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (3, 'ADMIN');
+>>>>>>> c0901d174096b7517e657ba0ef406f078a824b9c
 
 insert into USER_ROLES(USER_ID, ROLE_ID) values (1, 1);
 insert into USER_ROLES(USER_ID, ROLE_ID) values (2, 1);
