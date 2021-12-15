@@ -26,7 +26,7 @@ public class OrderController {
     public Orders updateOrder(@PathVariable Integer id, @RequestBody Orders order) { return orderService.updateById(id, order); }
 
     @PutMapping("/state/{id}")
-    public boolean changeOrderStatus(@PathVariable Integer id, @RequestBody OrdersStatus status) { return orderService.changeStatus(id, status); }
+    public boolean changeOrderStatus(@PathVariable Integer id, @RequestBody Orders order) { return orderService.changeStatus(id, order); }
 
     @GetMapping("/{id}")
     public Orders getById(@PathVariable Integer id) { return orderService.findById(id); }

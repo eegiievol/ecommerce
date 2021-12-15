@@ -10,5 +10,5 @@ public interface OrderService {
     Orders findById(Integer id);
     Orders save(Orders order);
     Orders updateById(Integer id, Orders order);
-    boolean changeStatus(Integer id, OrdersStatus status);
+    boolean changeStatus(Integer id, Orders order);
 }
