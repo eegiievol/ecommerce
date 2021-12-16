@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import com.google.common.collect.ImmutableList;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -62,8 +61,10 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").hasAuthority("ADMIN")
 
                 .antMatchers("/products").hasAuthority("CUSTOMER")
+                .antMatchers("/products").hasAuthority("SELLER")
 
                 .antMatchers("/seller").hasAuthority("SELLER")
+                .antMatchers("/seller").hasAuthority("CUSTOMER")
 
                 .antMatchers("/orders").hasAuthority("SELLER")
                 .antMatchers("/orders").hasAuthority("CUSTOMER")

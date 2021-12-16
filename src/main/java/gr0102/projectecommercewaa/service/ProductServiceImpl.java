@@ -1,9 +1,6 @@
 package gr0102.projectecommercewaa.service;
 
-import gr0102.projectecommercewaa.domain.Orders;
-import gr0102.projectecommercewaa.domain.Product;
-import gr0102.projectecommercewaa.domain.ProductStatus;
-import gr0102.projectecommercewaa.domain.User;
+import gr0102.projectecommercewaa.domain.*;
 import gr0102.projectecommercewaa.dto.ProductDto;
 import gr0102.projectecommercewaa.repo.OrderRepo;
 import gr0102.projectecommercewaa.repo.ProductRepo;
@@ -78,5 +75,16 @@ public class ProductServiceImpl implements ProductService {
         }
         else
             return null;
+    }
+
+    @Override
+    public List<ProductCategory> getAllCategory() {
+        List<ProductCategory> categories = new ArrayList<>();
+
+        for(ProductCategory c: ProductCategory.values()) {
+            categories.add(c);
+        }
+
+        return categories;
     }
 }

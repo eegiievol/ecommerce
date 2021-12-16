@@ -1,6 +1,7 @@
 package gr0102.projectecommercewaa.controller;
 
 import gr0102.projectecommercewaa.domain.Product;
+import gr0102.projectecommercewaa.domain.ProductCategory;
 import gr0102.projectecommercewaa.domain.User;
 import gr0102.projectecommercewaa.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,7 @@ public class ProductController {
 
     @PostMapping
     public Product saveProduct(@RequestBody Product product) { return productService.save(product); }
+
+    @GetMapping("/getAllCategory")
+    public List<ProductCategory> getAllCategory() { return productService.getAllCategory(); }
 }

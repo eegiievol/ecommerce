@@ -15,7 +15,7 @@ public class SellerServiceImpl implements SellerService {
 
     @Override
     public void addProduct(Product p, User user) {
-        productService.save(p, user);
+        productService.save(p);
     }
 
     @Override
