@@ -9,11 +9,11 @@ VALUES (4, '1994-04-05', 'user2@miu.edu',true,'User2L','User2F','$2y$12$ZULYuC/C
 INSERT into USER (id, birth_date, email, is_enabled, lastname, name, password, phone, registered_date, username)
 VALUES (5, '1999-09-09', 'admin@miu.edu',true,'admin','admin','$2a$12$jsFHTdpZAOjxbgk9hnoEeeCPMQaq3pHiOOLX.U3X5TnQde7zxIILC','999-999-9999','2020-09-09 22:21:20','admin');
 
-INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (1,'2021-12-01 11:20:41', 'Socks','2.5','Clothing','active',1);
-INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (2,'2021-12-11 13:25:12', 'Hat','10.5','Clothing','active',1);
-INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (3,'2021-12-03 12:40:13', 'Dell','950.60','Computer','active',2);
-INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (4,'2021-11-22 03:20:41', 'Apple Watch','120.0','Watch','active',2);
-INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id) VALUES (5,'2021-09-12 08:33:49', 'Dell monitor','150.0','Computer','active',4);
+INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id,image_path) VALUES (1,'2021-12-01 11:20:41', 'Christmas Socks','3.5','Clothing','active',1,'./image/img_1.png');
+INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id,image_path) VALUES (2,'2021-12-11 13:25:12', 'Hat Under Armor','10.5','Clothing','active',1, './image/img_2.png');
+INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id,image_path) VALUES (3,'2021-12-03 12:40:13', 'Dell Optiplex 7090','850.60','Computer','active',2, './image/img_3.png');
+INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id,image_path) VALUES (4,'2021-11-22 03:20:41', 'Apple Watch Series 6','144.0','Watch','active',2, './image/img_4.png');
+INSERT INTO PRODUCT(id,added_date,name,price,category,status,user_id,image_path) VALUES (5,'2021-09-12 08:33:49', 'MaCBook Pro 16-inch','1055.0','Computer','active',4, './image/img_5.png');
 
 INSERT INTO ORDERS (id, order_date, total_price, user_id, order_status)  VALUES (1, '2021-12-12 17:15:21', '13', 1, 'Just_ordered');
 INSERT INTO ORDERS (id, order_date, total_price, user_id, order_status, cancelled_date)  VALUES (2, '2021-12-13 15:30:41', '120', 1, 'Cancelled', '2021-12-13 18:45:30');
