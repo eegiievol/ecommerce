@@ -27,6 +27,7 @@ public class Product {
     private String name;
     private LocalDateTime addedDate;
     private double price;
+    private String imagePath;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

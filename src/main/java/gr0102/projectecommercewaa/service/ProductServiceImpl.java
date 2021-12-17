@@ -4,6 +4,7 @@ import gr0102.projectecommercewaa.domain.*;
 import gr0102.projectecommercewaa.dto.ProductDto;
 import gr0102.projectecommercewaa.repo.OrderRepo;
 import gr0102.projectecommercewaa.repo.ProductRepo;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,13 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getAll() {
         List<Product> products = new ArrayList<>();
-        productRepo.findAll().forEach(products::add);
+        var Data = productRepo.findAll();
+
+        for(Product p: Data) {
+            if(p.getProductStatus() != ProductStatus.deactivated)
+                products.add(p);
+        }
+
         return products;
     }
 
@@ -53,9 +60,14 @@ public class ProductServiceImpl implements ProductService {
         if(orderRepo.findOrdersByProductsId(id) < 1 && productRepo.findById(id).isPresent()) {
                 //productRepo.deleteById(id);
                 Product updatingProduct = productRepo.findById(id).get();
-                updatingProduct.setProductStatus(ProductStatus.deactivated);
-                productRepo.save(updatingProduct);
-                return true;
+
+                if(updatingProduct.getProductStatus() == ProductStatus.active) {
+                    updatingProduct.setProductStatus(ProductStatus.deactivated);
+                    productRepo.save(updatingProduct);
+                    return true;
+                }
+                else
+                    return false;
         }
         else
             return false;
