@@ -62,5 +62,10 @@ public class UserServiceImpl implements UserService {
         return u.isEnabled();
     }
 
-
+    @Override
+    public void addUserSubscriber(long userid, long subid) {
+        User user = userRepo.findUserById(userid);
+        User subs = userRepo.findUserById(subid);
+        user.addFollower(subs);
+    }
 }

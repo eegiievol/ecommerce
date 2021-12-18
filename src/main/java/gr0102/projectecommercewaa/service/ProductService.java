@@ -14,4 +14,5 @@ public interface ProductService {
     boolean deleteById(Integer id);
     Product updateById(Integer id, Product product);
     List<ProductCategory> getAllCategory();
+    List<Product> getById(long id);
 }

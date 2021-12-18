@@ -39,6 +39,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getById(long id) {
+        List<Product> products = new ArrayList<>();
+        var Data = productRepo.findAll();
+
+        for(Product p: Data) {
+            if(p.getProductStatus() != ProductStatus.deactivated && p.getUser().getId() == id)
+                products.add(p);
+        }
+
+        return products;
+    }
+
+    @Override
     public Product findById(Integer id) {
         if(productRepo.findById(id).isPresent())
             return productRepo.findById(id).get();

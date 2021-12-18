@@ -13,5 +13,6 @@ public interface UserService {
     public void deleteUser(long id);
     public void approve(long id);
     public boolean ifUserApproved(String username);
+    public void addUserSubscriber(long userid, long subid);
 
 }

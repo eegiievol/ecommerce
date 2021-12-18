@@ -20,6 +20,9 @@ public class ProductController {
     @GetMapping("/getAll")
     public List<Product> getAll() { return productService.getAll(); }
 
+    @GetMapping("/seller/{userid}")
+    public List<Product> getBySubscriber(@PathVariable long userid) { return productService.getById(userid); }
+
     @PutMapping("/{id}")
     public Product updateProduct(@PathVariable Integer id, @RequestBody Product product) { return productService.updateById(id, product); }
 
